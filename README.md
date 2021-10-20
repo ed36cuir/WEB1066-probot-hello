@@ -1,4 +1,4 @@
-# probot-hello
+# Probot-hello
 
 > A GitHub App built with [Probot](https://github.com/probot/probot) that A Probot app
 
@@ -20,4 +20,4 @@ For more, check out the [Contributing Guide](CONTRIBUTING.md).
 
 ## License
 
-[ISC](LICENSE) © 2018 Edward Raigosa <wenlock@github.com>
+[ISC](LICENSE) © 2021 Edward Raigosa <wenlock@github.com>
