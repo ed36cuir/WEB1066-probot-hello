@@ -5,7 +5,7 @@ services:
 
 env:
   - NODE_VERSION=10-jessie
-  - NODE_VERSION=14-buster
+  - NODE_VERSION=8
 
 script:
   - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
@@ -46,29 +46,29 @@ jobs:
       - NODE_VERSION=10-jessie
       - NPM_TARGET=coverage
     - stage: npm-targets
-      name: "Test 14-buster"
+      name: "Test 8"
       install: skip
       script:
       - docker run --rm $DOCKER_USERNAME/probot-hello:$NODE_VERSION-$(git rev-parse HEAD) npm run $NPM_TARGET
       env:
-      - NODE_VERSION=14-buster
+      - NODE_VERSION=8
       - NPM_TARGET=test
     - stage: npm-targets
-      name: "14-buster"
+      name: "8"
       install: skip
       script:
       - docker run --rm $DOCKER_USERNAME/probot-hello:$NODE_VERSION-$(git rev-parse HEAD) npm run $NPM_TARGET
       env:
-      - NODE_VERSION=14-buster
+      - NODE_VERSION=8
       - NPM_TARGET=lint
     - stage: npm-targets
-      name: "Test 14-buster"
+      name: "Test 8"
       install: skip
       script:
       - docker run --rm $DOCKER_USERNAME/probot-hello:$NODE_VERSION-$(git rev-parse HEAD) npm run $NPM_TARGET
       if: branch = master
       env:
-      - NODE_VERSION=14-buster
+      - NODE_VERSION=8
       - NPM_TARGET=coverage
 after_success:
   - set -x -v;
